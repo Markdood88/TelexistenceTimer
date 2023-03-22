@@ -20,11 +20,15 @@ public class TimerManager : MonoBehaviour
     protected float timerSaved;
     protected bool timerActive;
     public int timerMaximumMinutes;
-    
+    protected float stopwatch;
+    protected bool stopwatchActive;
+    public int stopwatchMaximumMinutes;
+
     // Start is called before the first frame update
     void Start()
     {
         timerActive = false;
+        stopwatchActive = false;
     }
 
     // Update is called once per frame
@@ -42,14 +46,23 @@ public class TimerManager : MonoBehaviour
 
         //update Timer
         updateTimer();
+
+        //update Stopwatch
+        updateStopwatch();
     }
 
+    /////////////////////////////////////////////////// CLOCK
+
+    //Clock Update
     public void updateClock(int hour, int minute, int second){
 
         //pad 0s to 2 digit places
         clockText.text = hour.ToString().PadLeft(2,'0') + ":" + minute.ToString().PadLeft(2, '0') + ":" + second.ToString().PadLeft(2,'0');
     }
 
+    /////////////////////////////////////////////////// TIMER
+
+    //Timer Main Functions
     public void updateTimer(){
 
         //Timer subtract while on
@@ -68,7 +81,6 @@ public class TimerManager : MonoBehaviour
             + ((int)timer%60).ToString().PadLeft(2,'0') + "s " //Convert Seconds
             + ((int)(timer%1 * 1000)).ToString().PadLeft(3,'0') + "ms"; //Convert Milliseconds
     }
-
     public void TimerAdd(int minutes, int seconds, int milliseconds){
 
         //Add values to timer
@@ -78,7 +90,6 @@ public class TimerManager : MonoBehaviour
         if(timer/60 > timerMaximumMinutes) {timer = timerMaximumMinutes*60;}
 
     }
-
     public void TimerToggle(){
         timerActive = !timerActive; //Switch active between true and false
     }
@@ -91,7 +102,7 @@ public class TimerManager : MonoBehaviour
         timer = timerSaved; //Reload saved timer value
     }
 
-    //Get Functions
+    //Timer Get Functions
     public int getTimerMinute(){
         return (int)(timer/60);
     }
@@ -102,12 +113,12 @@ public class TimerManager : MonoBehaviour
         return (int)(timer%1 * 1000);
     }
 
-    //Set Function
+    //Timer Set Function
     public void setTimer(int minutes, int seconds, int milliseconds){
         timer = minutes*60 + seconds + milliseconds*.001f;
     }
 
-    //Button functions
+    //Timer Button functions
     public void timerAddOneMin(){
         TimerAdd(1,0,0);
     }
@@ -131,5 +142,50 @@ public class TimerManager : MonoBehaviour
     }
     public void timerSub100MS(){
         TimerAdd(0,0,-100);
+    }
+
+    /////////////////////////////////////////////////// STOPWATCH
+
+    //Stopwatch Update
+    public void updateStopwatch(){
+        
+        //Stopwatch add while on
+        if(stopwatchActive){
+            stopwatch += Time.deltaTime;
+        }
+
+        //Timer Deactivate when equals 0
+        if (stopwatch >= stopwatchMaximumMinutes*60){
+            stopwatchActive = false;
+            stopwatch = stopwatchMaximumMinutes*60;
+        }
+
+        stopwatchText.text = ((int)stopwatch/60).ToString().PadLeft(2,'0') + "m " //Convert Minutes
+            + ((int)stopwatch%60).ToString().PadLeft(2,'0') + "s " //Convert Seconds
+            + ((int)(stopwatch%1 * 1000)).ToString().PadLeft(3,'0') + "ms"; //Convert Milliseconds
+
+    }
+    
+    //Stopwatch Main Functions
+    public void stopwatchToggle(){
+        stopwatchActive = !stopwatchActive;
+    }
+    public void stopwatchStart(){
+        stopwatchActive = true;
+    }
+    public void stopwatchReset(){
+        stopwatchActive = false;
+        stopwatch = 0;
+    }
+
+    //Stopwatch Get Functions
+    public int getStopwatchMinute(){
+        return (int)(stopwatch/60);
+    }
+    public int getStopwatchSecond(){
+        return (int)(stopwatch%60);
+    }
+    public int getStopwatchMillisecond(){
+        return (int)(stopwatch%1 * 1000);
     }
 }

@@ -880,8 +880,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockText: {fileID: 5836016614177163242}
   timerText: {fileID: 5836016613929515076}
-  stopwatchText: {fileID: 0}
+  stopwatchText: {fileID: 5836016615041477727}
   timerMaximumMinutes: 15
+  stopwatchMaximumMinutes: 15
 --- !u!1 &1959445966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8352959660434345694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: stopwatchReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &684438889364244074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3937,7 +3950,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6741021299134969839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: stopwatchToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5798557911679193877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,7 +4815,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6886407342885613455}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: stopwatchStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8352959660434345694
 MonoBehaviour:
   m_ObjectHideFlags: 0
