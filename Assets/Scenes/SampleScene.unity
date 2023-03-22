@@ -233,7 +233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 174131379}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: TimerReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &174131381
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -352,7 +364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359900691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: TimerToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &359900693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -784,7 +808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 989611558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: TimerStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &989611560
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -843,8 +879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockText: {fileID: 5836016614177163242}
-  timerText: {fileID: 0}
+  timerText: {fileID: 5836016613929515076}
   stopwatchText: {fileID: 0}
+  timerMaximumMinutes: 15
 --- !u!1 &1959445966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1675,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463071650219600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerAddOneMin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463071650219615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1865,7 +1914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463071795401693}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerSubTenMS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3256463071795401693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,7 +2342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463071920758432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerSub100MS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463071920758447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2643,7 +2716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463072321954361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerAddOneSec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463072321954360
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2797,7 +2882,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463072510306121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerSubOneMin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3256463072683024547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,7 +3140,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463072719815190}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerAddTenMS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463072719815400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3270,7 +3379,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463073149430072}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerSubOneSec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463073149430055
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3505,7 +3626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3256463073386519692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327553375}
+        m_TargetAssemblyTypeName: TimerManager, Assembly-CSharp
+        m_MethodName: timerAdd100MS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &3256463073386519691
 CanvasRenderer:
   m_ObjectHideFlags: 0
