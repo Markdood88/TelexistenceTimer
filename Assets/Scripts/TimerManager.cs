@@ -8,8 +8,11 @@ public class TimerManager : MonoBehaviour
 {
     //Choose TextMeshPro for display
     public TextMeshProUGUI clockText;
+    public TextMeshProUGUI optionalDateText;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI stopwatchText;
+    public int timerMaximumMinutes;
+    public int stopwatchMaximumMinutes;
 
     //Variables for protected access
     protected System.DateTime timeNow;
@@ -18,11 +21,9 @@ public class TimerManager : MonoBehaviour
     protected int clockSecond;
     protected float timer;
     protected float timerSaved;
-    protected bool timerActive;
-    public int timerMaximumMinutes;
     protected float stopwatch;
+    protected bool timerActive;
     protected bool stopwatchActive;
-    public int stopwatchMaximumMinutes;
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +35,8 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //update timeNow for protected access
-        timeNow = System.DateTime.UtcNow.ToLocalTime();
-
-        clockHour = timeNow.Hour;
-        clockMinute = timeNow.Minute;
-        clockSecond = timeNow.Second;
-
-        //update clock from timeNow
-        updateClock(clockHour, clockMinute, clockSecond);
+        //update clock from system Time
+        updateClock();
 
         //update Timer
         updateTimer();
@@ -54,10 +48,58 @@ public class TimerManager : MonoBehaviour
     /////////////////////////////////////////////////// CLOCK
 
     //Clock Update
-    public void updateClock(int hour, int minute, int second){
+    public void updateClock(){
 
-        //pad 0s to 2 digit places
-        clockText.text = hour.ToString().PadLeft(2,'0') + ":" + minute.ToString().PadLeft(2, '0') + ":" + second.ToString().PadLeft(2,'0');
+        //update timeNow for protected access
+        timeNow = System.DateTime.UtcNow.ToLocalTime();
+        clockHour = timeNow.Hour;
+        clockMinute = timeNow.Minute;
+        clockSecond = timeNow.Second;
+
+        //Update Text - //pad 0s to 2 digit places
+        clockText.text = clockHour.ToString().PadLeft(2,'0') + ":" + clockMinute.ToString().PadLeft(2,'0') + ":" + clockSecond.ToString().PadLeft(2,'0');
+        
+        if(optionalDateText != null){
+            optionalDateText.text = timeNow.Month.ToString().PadLeft(2,'0') + "/" + timeNow.Day.ToString().PadLeft(2,'0') + "/" + timeNow.Year.ToString().PadLeft(4,'0'); //Optional Date
+        }
+    }
+    public void updateClock(System.DateTime newTime){
+
+        //update timeNow for protected access
+        timeNow = newTime;
+        clockHour = timeNow.Hour;
+        clockMinute = timeNow.Minute;
+        clockSecond = timeNow.Second;
+        
+        //Update Text - //pad 0s to 2 digit places
+        clockText.text = clockHour.ToString().PadLeft(2,'0') + ":" + clockMinute.ToString().PadLeft(2, '0') + ":" + clockSecond.ToString().PadLeft(2,'0');
+
+        if(optionalDateText != null){
+            optionalDateText.text = timeNow.Month.ToString().PadLeft(2,'0') + "/" + timeNow.Day.ToString().PadLeft(2,'0') + "/" + timeNow.Year.ToString().PadLeft(4,'0'); //Optional Date
+        }
+    }
+
+    //Clock Get Functions
+    public System.DateTime getClockNow(){
+        return timeNow;
+    }
+    public int getClockHours(){
+        return timeNow.Hour;
+    }
+    public int getClockMinutes(){
+        return timeNow.Minute;
+    }
+    public int getClockSeconds(){
+        return timeNow.Second;
+    }
+    public int getDay(){
+        return timeNow.Day;
+    }
+    public int getMonth(){
+        return timeNow.Month;
+    }
+    public int getYear(){
+        return timeNow.Year;
     }
 
     /////////////////////////////////////////////////// TIMER
